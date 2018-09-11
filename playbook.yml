@@ -1,0 +1,10 @@
+---
+- hosts: miners
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Install temp script
+      template:
+        src: temp.j2
+        dest: /usr/local/bin/temp
+        mode: +x
