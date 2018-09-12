@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-node('master') {
+node('ninja') {
 
     try {
 
