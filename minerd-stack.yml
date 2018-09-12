@@ -6,12 +6,13 @@ services:
     image: jahrik/arm-m-minerd
     # xmg.minerclaim.net:3333
     # xmg.minerclaim.net:7008
-#     environment:
-#       - M_USER: "${M_USER}"
-#       - M_WORK: "${M_PASS}"
-#       - M_PASS: "${M_PASS}"
-#       - M_URL: "${M_URL}"
-#       - M_CPU: "${M_CPU}"
+    environment:
+      M_USER: "${M_USER}"
+      M_WORK: "${M_PASS}"
+      M_PASS: "${M_PASS}"
+      M_URL: "${M_URL}"
+      M_CPU: "${M_CPU}"
+    command: m-minerd --url $M_URL -u $M_USER.$M_WORK -p $M_PASS -e $M_CPU
     deploy:
       mode: global
       placement:
@@ -19,3 +20,4 @@ services:
 #       resources:
 #         limits:
 #           cpus: '4'
+#
