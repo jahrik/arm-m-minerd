@@ -22,7 +22,7 @@ node('ninja') {
         }
 
         stage('deploy') {
-          withCredentials([usernamePassword(credentialsId: 'miner_creds',
+          withCredentials([usernamePassword(credentialsId: 'xmg_creds',
             usernameVariable: 'M_USER',
             passwordVariable: 'M_PASS')]) {
             // Deploy to Swarm
