@@ -31,6 +31,12 @@ node('ninja') {
             usernameVariable: 'M_USER',
             passwordVariable: 'M_PASS')]) {
             // Deploy to Swarm
+            echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            echo "M_USER = ${env.M_USER}"
+            echo "M_PASS = ${env.M_PASS}"
+            echo "M_WORK = ${env.M_WORK}"
+            echo "M_URL = ${env.M_URL}"
+            echo "M_CPU = ${env.M_CPU}"
             sh "make deploy"
           }
         }
