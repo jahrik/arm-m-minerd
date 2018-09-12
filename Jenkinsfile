@@ -1,5 +1,10 @@
 #!/usr/bin/env groovy
 
+env.M_WORKER = odroid
+env.M_URL = stratum+tcp://xmg.minerclaim.net:3333
+env.M_CPU = 50
+xmg_creds = 'a85d7027-45a6-4b45-b320-8379ff5fba9c'
+
 node('ninja') {
 
     try {
@@ -22,7 +27,7 @@ node('ninja') {
         }
 
         stage('deploy') {
-          withCredentials([usernamePassword(credentialsId: 'a85d7027-45a6-4b45-b320-8379ff5fba9c',
+          withCredentials([usernamePassword(credentialsId: xmg_creds,
             usernameVariable: 'M_USER',
             passwordVariable: 'M_PASS')]) {
             // Deploy to Swarm
