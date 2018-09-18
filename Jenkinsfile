@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
 
 env.M_WORK = 'odroid'
-env.M_URL = 'stratum+tcp://xmg.minerclaim.net:3333'
+// env.M_URL = 'stratum+tcp://xmg.minerclaim.net:3333'
+env.M_URL = 'stratum+tcp://pool.coinsump.com:3333'
 env.M_CPU = '50'
 xmg_creds = 'a85d7027-45a6-4b45-b320-8379ff5fba9c'
 
