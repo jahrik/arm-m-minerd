@@ -1,17 +1,16 @@
 IMAGE = "jahrik/m-minerd"
 TAG = "arm32v7"
+STACK = "mine"
 
 all: build
 
 build:
 	@docker build -t ${IMAGE}:$(TAG) .
-	@docker tag ${IMAGE}:$(TAG) ${IMAGE}:latest
 
 push:
 	@docker push ${IMAGE}:$(TAG)
-	@docker push ${IMAGE}:latest
 
 deploy:
-	@docker stack deploy -c minerd-stack.yml mine
+	@docker stack deploy -c minerd-stack.yml ${STACK}
 
 .PHONY: all build push deploy

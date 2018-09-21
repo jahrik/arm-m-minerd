@@ -3,7 +3,7 @@ version: '3'
 services:
 
   minerd:
-    image: jahrik/arm-m-minerd
+    image: jahrik/arm-m-minerd:arm32v7
     # xmg.minerclaim.net:3333
     # xmg.minerclaim.net:7008
     environment:
