@@ -1,4 +1,4 @@
-IMAGE = "jahrik/m-minerd"
+IMAGE = "jahrik/arm-m-minerd"
 TAG = "arm32v7"
 STACK = "mine"
 
