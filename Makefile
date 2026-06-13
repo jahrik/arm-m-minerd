@@ -1,5 +1,6 @@
+.EXPORT_ALL_VARIABLES:
 IMAGE = "jahrik/arm-m-minerd"
-TAG = "arm32v7"
+TAG = latest
 STACK = "mine"
 
 all: build

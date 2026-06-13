@@ -1,23 +1,17 @@
-version: '3'
-
+---
 services:
 
   minerd:
-    image: jahrik/arm-m-minerd:arm32v7
+    image: jahrik/arm-m-minerd:latest
     # xmg.minerclaim.net:3333
     # xmg.minerclaim.net:7008
     environment:
       M_USER: "${M_USER}"
-      M_WORK: "${M_PASS}"
+      M_WORK: "${M_WORK}"
       M_PASS: "${M_PASS}"
-      M_URL: "${M_URL}"
-      M_CPU: "${M_CPU}"
-    command: m-minerd --url $M_URL -u $M_USER.$M_WORK -p $M_PASS -e $M_CPU
+      M_URL: "${M_URL:-stratum+tcp://xmg.minerclaim.net:3333}"
+      M_CPU: "${M_CPU:-50}"
     deploy:
       mode: global
       placement:
-        constraints: [node.labels.miner == true ]
-#       resources:
-#         limits:
-#           cpus: '4'
-#
+        constraints: [node.labels.miner == true]
