@@ -5,9 +5,9 @@ Multi-arch Magi (XMG) CPU miner: multi-stage source build of m-pays/m-cpuminer-v
 ## Commands
 
 ```bash
-make build                                  # build jahrik/arm-m-minerd:latest
+just build                                  # build jahrik/arm-m-minerd:latest
 docker run --rm jahrik/arm-m-minerd:latest m-minerd --version
-make deploy                                 # swarm stack deploy (stack: mine)
+just deploy                                 # swarm stack deploy (stack: mine)
 ```
 
 ## CI
