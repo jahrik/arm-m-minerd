@@ -16,14 +16,14 @@ docker run -d -e M_USER=user -e M_WORK=worker -e M_PASS=pass \
 
 ```bash
 ./update_labels.sh   # label which nodes mine
-make deploy          # global service on miner=true nodes, stack: mine
+just deploy          # global service on miner=true nodes, stack: mine
 ```
 
 ## Build
 
 ```bash
-make build
-make push
+just build
+just push
 ```
 
 CI: PR builds + `--version` check; merge to main pushes multi-arch (amd64/arm64/armv7) to Docker Hub.
